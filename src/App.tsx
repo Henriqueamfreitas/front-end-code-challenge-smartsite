@@ -5,11 +5,16 @@ import { Form } from "./Components/Form"
 import { Legend } from "./Components/Legend"
 import { List } from "./Components/List"
 
+import { GlobalReset } from "./styles/reset"
+import { GlobalStyles } from "./styles/global"
+
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
+      <GlobalReset />
+      <GlobalStyles />
       <Header />
       <Form />
       <Legend />
