@@ -5,17 +5,31 @@ import { useForm } from "react-hook-form"
 
 export const Form = () => {
   const { register, handleSubmit, reset } = useForm()
+
   const [formData, setFormData] = useState({
     period: "",
     closedUnits: false,
   })
+
+  const [text, setText] = useState('')
+
   const submit = (data) => {
-    setFormData(data)
-    reset()
+    if(!data.period){
+        setText('Este campo é obrigatório')
+        setFormData({
+          period: "",
+          closedUnits: false
+        })
+    } else{
+      setFormData(data)
+      setText(null)
+      reset()
+    }
   }
 
   const handleClear = () => {
     reset()
+    setText(null)
   }
 
   return (
@@ -37,6 +51,7 @@ export const Form = () => {
         <input type="radio" id="night" value={"night"} {...register("period")} />
         <label htmlFor="night">Noite 18:01 às 23:00</label>
       </div>
+      <p>{text}</p>
 
       <div>
         <input type="checkbox" id="closedUnits" {...register("closedUnits")} />
