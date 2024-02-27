@@ -1,15 +1,20 @@
 import clock from "../../../_material/images/icon-hour.png"
 import { StyledForm } from "./style.ts"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
-// import { useContext, useEffect } from "react";
-// import { GymContext } from "../../Providers/GymContext/GymContext.js";
+import { useContext } from "react";
+import { GymContext } from "../../Providers/GymContext/GymContext.js"
+import { ILocations } from "../../Providers/GymContext/@types.ts";
 
 
 export const Form = () => {
   const { register, handleSubmit, reset } = useForm<IForm>()
+  const [text, setText] = useState<string | null>('')
+  // const [filteredLocations, setFilteredLocations] = useState<ILocations[]>([]);
 
-  interface IForm  {
+  const { gymInfo, filteredLocations, setFilteredLocations } = useContext(GymContext)
+
+  interface IForm {
     period: string;
     closedUnits: boolean;
   }
@@ -19,28 +24,106 @@ export const Form = () => {
     closedUnits: false,
   })
 
-  console.log(formData)
+  useEffect(() => {
+    filterLocations(formData.period, formData.closedUnits);
+  }, [formData, gymInfo])
 
-  const [text, setText] = useState<string|null>('')
+  const locations = filteredLocations.length > 0 ? filteredLocations : gymInfo.locations;
 
-  const submit = (data: IForm):void => {
-    if(!data.period){
-        setText('Este campo é obrigatório')
-        setFormData({
-          period: "",
-          closedUnits: false
-        })
-    } else{
-      setFormData(data)
-      setText(null)
-      reset()
-    }
+  const submit = (data: IForm): void => {
+    setFormData(data)
+    setText(null)
+    reset({ period: "" })
   }
 
   const handleClear = () => {
     reset()
     setText(null)
   }
+
+  const filterLocations = (period: string, closedUnits: boolean) => {
+    let filtered: ILocations[] = gymInfo.locations;
+
+    // Seleciona todas as unidades OU apenas as abertas
+    if (!closedUnits) {
+      filtered = filtered.filter(location => {
+        return location.opened;
+      });
+    }
+
+
+    if (period === "morning") {
+      let returnArray: ILocations[] = []
+      filtered.forEach(filter => {
+        filter.schedules?.forEach(schedule => {
+          const numbers = schedule.hour.match(/\d+/g);
+          if (numbers) {
+            let first_number = Number(numbers[0])
+            let second_number = Number(numbers[1])
+            if (first_number >= 6 && first_number < 12) {
+              returnArray.push(filter)
+            }
+          }
+        })
+      })
+      const uniquereturnArray = [...new Set(returnArray)];
+      // const itensFaltantes = filtered.filter(item => !uniquereturnArray.includes(item));
+      // console.log(itensFaltantes)
+      filtered = (uniquereturnArray)
+    }
+
+    if (period === "afternoon") {
+      let returnArray: ILocations[] = []
+      filtered.forEach(filter => {
+        filter.schedules?.forEach(schedule => {
+          const numbers = schedule.hour.match(/\d+/g);
+          if (numbers) {
+            let first_number = Number(numbers[0])
+            let second_number = Number(numbers[1])
+            if(
+                (first_number <= 12 && 12 < second_number && second_number<= 18) ||
+                (first_number <= 12 && second_number>= 18) ||
+                (first_number >= 12 && first_number<18 && 12 < second_number && second_number<= 18) ||
+                (first_number >= 12 && first_number<18 && second_number>= 18)
+              ) {
+              returnArray.push(filter)
+            }
+          }
+        })
+      })
+      const uniquereturnArray = [...new Set(returnArray)];
+
+      const itensFaltantes = filtered.filter(item => !uniquereturnArray.includes(item));
+      // console.log(itensFaltantes)
+
+
+      filtered = (uniquereturnArray)
+      // console.log(filtered)
+    }
+
+    if (period === "night") {
+      let returnArray: ILocations[] = []
+      filtered.forEach(filter => {
+        filter.schedules?.forEach(schedule => {
+          const numbers = schedule.hour.match(/\d+/g);
+          if (numbers) {
+            let first_number = Number(numbers[0])
+            let second_number = Number(numbers[1])
+            if (second_number > 18 || second_number === 0) {
+              returnArray.push(filter)
+            }
+          }
+        })
+      })
+      const uniquereturnArray = [...new Set(returnArray)];
+      const itensFaltantes = filtered.filter(item => !uniquereturnArray.includes(item));
+      // console.log(itensFaltantes)
+      filtered = (uniquereturnArray)
+    }
+
+    setFilteredLocations(filtered);
+  };
+
 
   return (
     <StyledForm onSubmit={handleSubmit(submit)}>
@@ -50,7 +133,7 @@ export const Form = () => {
       </div>
       <p>Qual período quer treinar?</p>
       <div>
-        <input type="radio" id="morning" value={"morning"} {...register("period")}/>
+        <input type="radio" id="morning" value={"morning"} {...register("period")} />
         <label htmlFor="morning">Manhã 06:00 às 12:00</label>
       </div>
       <div>
@@ -68,7 +151,7 @@ export const Form = () => {
         <label htmlFor="closedUnits">Exibir unidades fechadas</label>
       </div>
 
-      <p>Resultados encontrados: <span>0</span></p>
+      <p>Resultados encontrados: <span>{locations.length}</span></p>
 
       <button type="submit">Encontrar unidade</button>
       <button type="button" onClick={handleClear}>Limpar</button>
