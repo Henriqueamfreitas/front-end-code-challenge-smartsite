@@ -1,5 +1,5 @@
 import clock from "../../../_material/images/icon-hour.png"
-import { StyledForm } from "./style.js"
+import { StyledForm } from "./style.ts"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 // import { useContext, useEffect } from "react";

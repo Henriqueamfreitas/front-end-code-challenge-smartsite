@@ -1,4 +1,4 @@
-import { StyledLegend } from "./style.js";
+import { StyledLegend } from "./style.ts";
 import { LegendCard } from "../LegendCard/index.js";
 
 import requiredMask from "../../../_material/images/required-mask.png"

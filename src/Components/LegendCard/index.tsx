@@ -1,4 +1,4 @@
-import { StyledLegendCard } from "./style.js";
+import { StyledLegendCard } from "./style.ts";
 import { LegendCardDiv } from "../LegendCardDiv/index.js";
 
 interface ILegendCardProps {

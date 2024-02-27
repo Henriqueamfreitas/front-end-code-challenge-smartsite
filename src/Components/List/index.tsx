@@ -1,7 +1,7 @@
 // import { useContext, useEffect } from "react";
 // import { GymContext } from "../../Providers/GymContext/GymContext";
 // import { ListCard } from "../ListCard";
-import { StyledList } from "./style.js"
+import { StyledList } from "./style.ts"
 
 export const List = () => {
   // const { gym, setGym, getGym } = useContext(GymContext);

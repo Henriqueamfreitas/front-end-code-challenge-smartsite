@@ -1,4 +1,4 @@
-import { StyledListCard } from "./style.js"
+import { StyledListCard } from "./style.ts"
 
 interface ISchedules {
   weekdays: string,
