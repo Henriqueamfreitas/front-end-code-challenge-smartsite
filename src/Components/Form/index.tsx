@@ -10,7 +10,6 @@ import { ILocations } from "../../Providers/GymContext/@types.ts";
 export const Form = () => {
   const { register, handleSubmit, reset } = useForm<IForm>()
   const [text, setText] = useState<string | null>('')
-  // const [filteredLocations, setFilteredLocations] = useState<ILocations[]>([]);
 
   const { gymInfo, filteredLocations, setFilteredLocations } = useContext(GymContext)
 
@@ -59,7 +58,6 @@ export const Form = () => {
           const numbers = schedule.hour.match(/\d+/g);
           if (numbers) {
             let first_number = Number(numbers[0])
-            let second_number = Number(numbers[1])
             if (first_number >= 6 && first_number < 12) {
               returnArray.push(filter)
             }
@@ -67,8 +65,6 @@ export const Form = () => {
         })
       })
       const uniquereturnArray = [...new Set(returnArray)];
-      // const itensFaltantes = filtered.filter(item => !uniquereturnArray.includes(item));
-      // console.log(itensFaltantes)
       filtered = (uniquereturnArray)
     }
 
@@ -93,12 +89,7 @@ export const Form = () => {
       })
       const uniquereturnArray = [...new Set(returnArray)];
 
-      const itensFaltantes = filtered.filter(item => !uniquereturnArray.includes(item));
-      // console.log(itensFaltantes)
-
-
       filtered = (uniquereturnArray)
-      // console.log(filtered)
     }
 
     if (period === "night") {
@@ -107,7 +98,6 @@ export const Form = () => {
         filter.schedules?.forEach(schedule => {
           const numbers = schedule.hour.match(/\d+/g);
           if (numbers) {
-            let first_number = Number(numbers[0])
             let second_number = Number(numbers[1])
             if (second_number > 18 || second_number === 0) {
               returnArray.push(filter)
@@ -116,8 +106,6 @@ export const Form = () => {
         })
       })
       const uniquereturnArray = [...new Set(returnArray)];
-      const itensFaltantes = filtered.filter(item => !uniquereturnArray.includes(item));
-      // console.log(itensFaltantes)
       filtered = (uniquereturnArray)
     }
 
