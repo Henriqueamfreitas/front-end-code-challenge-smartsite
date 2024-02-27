@@ -1,4 +1,4 @@
-import { StyledLegend } from "../Legend/style.js";
+import { StyledLegend } from "./style.js";
 import { LegendCard } from "../LegendCard/index.js";
 
 import requiredMask from "../../../_material/images/required-mask.png"
@@ -12,6 +12,7 @@ import partialFountain from "../../../_material/images/partial-fountain.png"
 import requiredLockerroom from "../../../_material/images/required-lockerroom.png"
 import partialLockerroom from "../../../_material/images/partial-lockerroom.png"
 import forbiddenLockerroom from "../../../_material/images/forbidden-lockerroom.png"
+
 export const Legend = () => {
   return (
     <StyledLegend>

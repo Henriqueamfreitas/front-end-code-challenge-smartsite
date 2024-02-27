@@ -1,19 +1,29 @@
 import clock from "../../../_material/images/icon-hour.png"
-import { StyledForm } from "../Form/style.js"
+import { StyledForm } from "./style.js"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+// import { useContext, useEffect } from "react";
+// import { GymContext } from "../../Providers/GymContext/GymContext.js";
+
 
 export const Form = () => {
-  const { register, handleSubmit, reset } = useForm()
+  const { register, handleSubmit, reset } = useForm<IForm>()
 
-  const [formData, setFormData] = useState({
+  interface IForm  {
+    period: string;
+    closedUnits: boolean;
+  }
+
+  const [formData, setFormData] = useState<IForm>({
     period: "",
     closedUnits: false,
   })
 
-  const [text, setText] = useState('')
+  console.log(formData)
 
-  const submit = (data) => {
+  const [text, setText] = useState<string|null>('')
+
+  const submit = (data: IForm):void => {
     if(!data.period){
         setText('Este campo é obrigatório')
         setFormData({

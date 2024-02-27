@@ -1,5 +1,5 @@
 import logo from "../../../_material/images/logo.svg"
-import { StyledHeader } from "../Header/style.js";
+import { StyledHeader } from "./style.js";
 
 export const Header = () => {
   return (

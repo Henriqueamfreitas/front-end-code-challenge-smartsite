@@ -1,6 +1,11 @@
 import { StyledLegendCardDiv } from "./style.js";
 
-export const LegendCardDiv = ({ img, text }) => {
+interface ILegendCardDivProps {
+  img: string,
+  text: string,
+}
+
+export const LegendCardDiv = ({ img, text }: ILegendCardDivProps) => {
   return (
       <StyledLegendCardDiv>
         <img src={img} alt="" />

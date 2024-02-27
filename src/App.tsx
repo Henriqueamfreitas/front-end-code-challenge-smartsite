@@ -5,21 +5,25 @@ import { Form } from "./Components/Form"
 import { Legend } from "./Components/Legend"
 import { List } from "./Components/List"
 
-import { GlobalReset } from "./styles/reset"
-import { GlobalStyles } from "./styles/global"
+import { GlobalReset } from "./Styles/reset.js"
+import { GlobalStyles } from "./Styles/global"
+
+import { GymProvider } from "./Providers/GymContext/GymContext"
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <GlobalReset />
-      <GlobalStyles />
-      <Header />
-      <Form />
-      <Legend />
-      <List />
-      <Footer />
+      <GymProvider>
+        <GlobalReset />
+        <GlobalStyles />
+        <Header />
+        <Form />
+        <Legend />
+        <List />
+        <Footer />
+      </GymProvider>
     </>
   )
 }
