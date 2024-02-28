@@ -55,15 +55,14 @@ export const StyledHeader = styled.header`
       padding: 0rem 10rem;
 
       h1{
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         line-height: normal;
         width: 250px;
       }
 
       p{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
     }
-
   }
 `

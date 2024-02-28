@@ -132,13 +132,17 @@ export const Form = () => {
         <label htmlFor="night"><span>Noite</span> <span>18:01 às 23:00</span></label>
       </div>
       <div>
-        <input type="checkbox" id="closedUnits" {...register("closedUnits")} />
-        <label htmlFor="closedUnits">Exibir unidades fechadas</label>
+        <div>
+          <input type="checkbox" id="closedUnits" {...register("closedUnits")} />
+          <label htmlFor="closedUnits">Exibir unidades fechadas</label>
+        </div>
+        <p>Resultados encontrados: <span>{locations.length}</span></p>
       </div>
-      <p>Resultados encontrados: <span>{locations.length}</span></p>
 
-      <button type="submit">ENCONTRAR UNIDADE</button>
-      <button type="button" onClick={handleClear}>LIMPAR</button>
+      <div>
+        <button type="submit">ENCONTRAR UNIDADE</button>
+        <button type="button" onClick={handleClear}>LIMPAR</button>
+      </div>
     </StyledForm>
   )
 }

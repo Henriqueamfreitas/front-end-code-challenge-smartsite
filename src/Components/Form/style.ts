@@ -22,7 +22,7 @@ export const StyledForm = styled.form`
     }
   }
 
-  p:nth-child(2){
+  p{
     color: var(--dark-grey);
     font-size: 22px;
     font-weight: lighter;
@@ -48,30 +48,35 @@ export const StyledForm = styled.form`
   }
 
   div:nth-child(6){
-    margin-top: .5rem;
     display: flex;
-    gap: .5rem;
-    align-items: center;
-  }
+    flex-direction: column;
+    gap: 1rem;
+    p{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .15rem;
+      font-size: 16px;
+      font-weight: lighter;
+      border: none;
 
-  p:nth-child(7){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .15rem;
-    font-size: 16px;
-    font-weight: lighter;
-
-    span{
-      font-weight: bold;
-      font-size: 18px;
+      span{
+        font-weight: bold;
+        font-size: 18px;
+      }
     }
   }
 
+  div:nth-child(7){
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
   button{
     border: none;
+    width: 100%;
     border-radius: .25rem;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     text-align: center;
     font-weight: bold;
     font-size: 14px;
@@ -84,6 +89,63 @@ export const StyledForm = styled.form`
   button:nth-of-type(2){
     border: solid 2px var(--light-grey);
     background-color: transparent;
+  }
+
+  @media (min-width: 550px) {
+    margin: 0rem 10rem 2rem 10rem;
+    padding: 1.5rem;
+    border: 4px solid var(--light-grey);
+    button{
+      cursor: pointer;
+    }
+
+    div:nth-child(1){
+      font-size: 16.8px;
+      margin-bottom: 1rem;
+      img{
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+
+    p:nth-child(2){
+      font-size: 26px;
+    }
+
+    div:nth-child(3), div:nth-child(4), div:nth-child(5){
+      label{
+        font-size: 19px;
+      }
+    }
+
+    div:nth-child(6){
+      margin-top: 1.5rem;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      label{
+        font-size: 18px;
+      }
+      p{
+        font-size: 18px;
+
+        span{
+          font-size: 21px;
+        }
+      }
+    }
+
+    div:nth-child(7){
+      flex-direction: row;
+      width: 80%;
+      align-self: center;
+    }
+
+    button{
+      padding: 1rem 1rem;
+      font-size: 16px;
+    }
+
   }
 `
 
