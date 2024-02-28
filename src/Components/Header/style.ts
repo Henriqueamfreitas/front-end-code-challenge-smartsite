@@ -49,5 +49,21 @@ export const StyledHeader = styled.header`
       margin-bottom: 0px;
       padding: 0rem;
     }
+
+
+    div:nth-child(2){
+      padding: 0rem 10rem;
+
+      h1{
+        font-size: 2.6rem;
+        line-height: normal;
+        width: 250px;
+      }
+
+      p{
+        font-size: 1.3rem;
+      }
+    }
+
   }
 `
