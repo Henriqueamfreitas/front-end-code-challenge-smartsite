@@ -75,12 +75,12 @@ export const Form = () => {
           if (numbers) {
             let first_number = Number(numbers[0])
             let second_number = Number(numbers[1])
-            if(
-                (first_number <= 12 && 12 < second_number && second_number<= 18) ||
-                (first_number <= 12 && second_number>= 18) ||
-                (first_number >= 12 && first_number<18 && 12 < second_number && second_number<= 18) ||
-                (first_number >= 12 && first_number<18 && second_number>= 18)
-              ) {
+            if (
+              (first_number <= 12 && 12 < second_number && second_number <= 18) ||
+              (first_number <= 12 && second_number >= 18) ||
+              (first_number >= 12 && first_number < 18 && 12 < second_number && second_number <= 18) ||
+              (first_number >= 12 && first_number < 18 && second_number >= 18)
+            ) {
               returnArray.push(filter)
             }
           }
@@ -121,27 +121,24 @@ export const Form = () => {
       <p>Qual período quer treinar?</p>
       <div>
         <input type="radio" id="morning" value={"morning"} {...register("period")} />
-        <label htmlFor="morning">Manhã 06:00 às 12:00</label>
+        <label htmlFor="morning"><span>Manhã</span> <span>06:00 às 12:00</span></label>
       </div>
       <div>
         <input type="radio" id="afternoon" value={"afternoon"} {...register("period")} />
-        <label htmlFor="afternoon">Tarde 12:01 às 18:00</label>
+        <label htmlFor="afternoon"><span>Tarde</span> <span>12:01 às 18:00</span></label>
       </div>
       <div>
         <input type="radio" id="night" value={"night"} {...register("period")} />
-        <label htmlFor="night">Noite 18:01 às 23:00</label>
+        <label htmlFor="night"><span>Noite</span> <span>18:01 às 23:00</span></label>
       </div>
-      <p>{text}</p>
-
       <div>
         <input type="checkbox" id="closedUnits" {...register("closedUnits")} />
         <label htmlFor="closedUnits">Exibir unidades fechadas</label>
       </div>
-
       <p>Resultados encontrados: <span>{locations.length}</span></p>
 
-      <button type="submit">Encontrar unidade</button>
-      <button type="button" onClick={handleClear}>Limpar</button>
+      <button type="submit">ENCONTRAR UNIDADE</button>
+      <button type="button" onClick={handleClear}>LIMPAR</button>
     </StyledForm>
   )
 }
