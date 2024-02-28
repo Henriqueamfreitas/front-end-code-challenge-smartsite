@@ -9,4 +9,11 @@ export const StyledLegend = styled.ul`
   align-items: space-between;
   gap: 2.5rem;
   background-color: var(--light-grey);
+
+  @media (min-width: 550px) {
+    margin: 0rem 10rem 2rem 10rem;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+  }
 `
