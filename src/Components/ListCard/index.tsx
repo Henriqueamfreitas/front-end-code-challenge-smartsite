@@ -1,8 +1,8 @@
 import { StyledListCard } from "./style.ts"
-import requiredMask from "../../../_material/images/required-mask.png"
+import requiredTowel from "../../../_material/images/required-towel.png"
 import recommendedMask from "../../../_material/images/recommended-mask.png"
 
-import requiredTowel from "../../../_material/images/required-towel.png"
+import requiredMask from "../../../_material/images/required-mask.png"
 import recommendTowel from "../../../_material/images/recommended-towel.png"
 
 import forbiddenFountain from "../../../_material/images/forbidden-fountain.png"
@@ -71,10 +71,9 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
       return recommendedMask
     }
   }
-  console.log(object)
 
   return (
-    <StyledListCard key={object.id}>
+    <StyledListCard key={object.id} opened={object.opened}>
       <div>
         {object.opened ? <span>Aberto</span> : <span>Fechado</span>}
         <h3>{object.title}</h3>
