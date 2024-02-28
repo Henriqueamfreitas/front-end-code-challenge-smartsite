@@ -4,7 +4,9 @@ import { StyledHeader } from "./style.ts"
 export const Header = () => {
   return (
     <StyledHeader>
-      <img src={logo} alt="" />
+      <div>
+        <img src={logo} alt="" />
+      </div>
       <div>
         <h1>REABERTURA SMART FIT</h1>
         <div></div>

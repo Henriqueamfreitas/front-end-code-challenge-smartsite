@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface IStyledListCardProps {
-  opened: boolean;
+  isopen: boolean;
 }
 
 export const StyledListCard = styled.li<IStyledListCardProps>`
@@ -19,7 +19,7 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
     border-bottom: solid 1px var(--dark-grey);
     padding: 0rem 0rem 1rem 0rem;
     span:nth-child(1) {
-      color: ${props => props.opened ? "var(--green)" : "var(--red)"};
+      color: ${props => props.isopen ? "var(--green)" : "var(--red)"};
       font-weight: 600;
     }
 
@@ -36,9 +36,13 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
 
   }
 
-  img{
-    width: 3rem;
-    height: 3rem;
+  div:nth-of-type(2){
+    display: flex;
+    justify-content: space-evenly;
+    img{
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   ul{
@@ -57,7 +61,7 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
       line-height: normal;
     }
     p{
-      font-size: 14px;
+      font-size: calc(11px + 2vw);
       font-weight: 400;
       line-height: normal;
     }

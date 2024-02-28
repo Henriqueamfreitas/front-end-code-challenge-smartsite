@@ -33,6 +33,7 @@ interface IListCardProps {
     street: string,
     city_name: string,
     uf: string,
+    isopen: boolean,
   }
 }
 
@@ -59,13 +60,13 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
   const towelImg = () => {
     if (object.towel === "required") {
       return requiredTowel
-    } else {
+    } else if(object.towel === "recommended"){
       return recommendTowel
     }
   }
 
   const maskImg = () => {
-    if (object.fountain === "required") {
+    if (object.mask === "required") {
       return requiredMask
     } else {
       return recommendedMask
@@ -73,7 +74,7 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
   }
 
   return (
-    <StyledListCard key={object.id} opened={object.opened}>
+    <StyledListCard key={object.id} isopen={object.opened ? true : false}>
       <div>
         {object.opened ? <span>Aberto</span> : <span>Fechado</span>}
         <h3>{object.title}</h3>

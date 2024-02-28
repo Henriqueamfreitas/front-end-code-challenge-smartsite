@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
     margin-bottom: 3rem;
   }
 
-  div{
+  div:nth-child(2){
     display: flex;
     flex-direction: column;
     padding: 0rem 2rem;
@@ -35,4 +35,19 @@ export const StyledHeader = styled.header`
     }
   }
 
+  @media (min-width: 550px) {
+    div:nth-child(1){
+      background-color: var(--black);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    img{
+      width: 180px;
+      height: 155px;
+      margin-bottom: 0px;
+      padding: 0rem;
+    }
+  }
 `
