@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { GymContext } from "../../Providers/GymContext/GymContext.js"
 import { ILocations } from "../../Providers/GymContext/@types.ts";
 
-
 export const Form = () => {
   const { register, handleSubmit, reset } = useForm<IForm>()
   const [text, setText] = useState<string | null>('')
@@ -20,7 +19,7 @@ export const Form = () => {
 
   const [formData, setFormData] = useState<IForm>({
     period: "",
-    closedUnits: false,
+    closedUnits: true,
   })
 
   useEffect(() => {
