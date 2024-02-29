@@ -8,9 +8,9 @@ export const StyledLegend = styled.ul`
   justify-content: center;
   align-items: space-between;
   gap: 2.5rem;
-  background-color: var(--light-grey);
+  background-color: var(--grey-5);
 
-  @media (min-width: 550px) {
+  @media (min-width: 34.375rem) {
     margin: 0rem 10rem 2rem 10rem;
     flex-direction: row;
     justify-content: space-between;

@@ -1,7 +1,7 @@
-import clock from "../../../_material/images/icon-hour.png"
-import { StyledForm } from "./style.ts"
-import { useEffect, useState } from "react"
-import { useForm } from "react-hook-form"
+import clock from "../../../_material/images/icon-hour.png";
+import { StyledForm } from "./style.ts";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { ILocations } from "../../Providers/GymContext/@types.ts";
 import { GymContext } from "../../Providers/GymContext/GymContext.tsx";
@@ -42,13 +42,11 @@ export const Form = () => {
   const filterLocations = (period: string, closedUnits: boolean) => {
     let filtered: ILocations[] = gymInfo.locations;
 
-    // Seleciona todas as unidades OU apenas as abertas
     if (!closedUnits) {
       filtered = filtered.filter(location => {
         return location.opened;
       });
     }
-
 
     if (period === "morning") {
       let returnArray: ILocations[] = []
@@ -109,13 +107,13 @@ export const Form = () => {
     }
 
     setFilteredLocations(filtered);
-  };
+  }
 
 
   return (
     <StyledForm onSubmit={handleSubmit(submit)}>
       <div>
-        <img src={clock} alt="" />
+        <img src={clock} alt="desenho de relógio amarelo marcando 9h" />
         <h2>Horário</h2>
       </div>
       <p>Qual período quer treinar?</p>

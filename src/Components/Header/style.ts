@@ -16,13 +16,13 @@ export const StyledHeader = styled.header`
     gap: 1.5rem;
 
     h1{
-      color: var(--dark-grey);
+      color: var(--grey-0);
       font-size: 2rem;
       font-weight: 1000;
     }
 
     div{
-      background-color: var(--dark-grey);
+      background-color: var(--grey-0);
       width: 1.5625rem;
       height: .625rem;
     }
@@ -31,11 +31,11 @@ export const StyledHeader = styled.header`
       font-size: 1rem;
       line-height: normal;
       font-weight: 500;
-      color: var(--dark-grey);
+      color: var(--grey-2);
     }
   }
 
-  @media (min-width: 550px) {
+  @media (min-width: 34.375rem) {
     div:nth-child(1){
       background-color: var(--black);
       display: flex;
@@ -44,9 +44,9 @@ export const StyledHeader = styled.header`
       margin-bottom: 3rem;
     }
     img{
-      width: 180px;
-      height: 155px;
-      margin-bottom: 0px;
+      width: 11.25rem;
+      height: 9.6875rem;
+      margin-bottom: 0rem;
       padding: 0rem;
     }
 
@@ -57,7 +57,7 @@ export const StyledHeader = styled.header`
       h1{
         font-size: 2.4rem;
         line-height: normal;
-        width: 250px;
+        width: 15.625rem;
       }
 
       p{

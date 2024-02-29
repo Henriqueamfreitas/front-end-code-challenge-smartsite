@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export const StyledForm = styled.form`
   padding: 1rem;
-  margin: 0px 2rem 2rem 2rem;
+  margin: 0rem 2rem 2rem 2rem;
   border-radius: .5rem;
-  border: 2px solid var(--light-grey);
+  border: .125rem solid var(--grey-5);
   gap: 1rem;
   display: flex;
   flex-direction: column;
 
   div:nth-child(1){
-    color: var(--dark-grey);
-    font-size: 14px;
+    color: var(--grey-4);
+    font-size: .875rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -23,12 +23,12 @@ export const StyledForm = styled.form`
   }
 
   p{
-    color: var(--dark-grey);
-    font-size: 22px;
+    color: var(--grey-3);
+    font-size: 1.375rem;
     font-weight: lighter;
     padding: 0rem .75rem .75rem .75rem;
     line-height: normal;
-    border-bottom: solid var(--light-grey) 2px;
+    border-bottom: solid var(--grey-5) .125rem;
   }
 
   div:nth-child(3), div:nth-child(4), div:nth-child(5){
@@ -36,18 +36,22 @@ export const StyledForm = styled.form`
     align-items: center;
     gap: .5rem;
     padding: .6rem 0rem;
-    border-bottom: solid 2px var(--light-grey);
+    border-bottom: solid .125rem var(--grey-5);
     label{
       display: flex;
       width: 100%;
-      color: var(--dark-grey);
+      color: var(--grey-3);
+
       justify-content: space-between;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: lighter;
     }
   }
 
   div:nth-child(6){
+    div{
+      color: var(--grey-1);
+    }
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -56,13 +60,14 @@ export const StyledForm = styled.form`
       justify-content: center;
       align-items: center;
       gap: .15rem;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: lighter;
       border: none;
+      color: var(--grey-1);
 
       span{
         font-weight: bold;
-        font-size: 18px;
+        font-size: 1.125rem;
       }
     }
   }
@@ -79,28 +84,41 @@ export const StyledForm = styled.form`
     padding: 1rem 3rem;
     text-align: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   button:nth-of-type(1){
     background-color: var(--yellow);
+    transition: .5s;
   }
 
   button:nth-of-type(2){
-    border: solid 2px var(--light-grey);
+    border: solid .125rem var(--grey-5);
     background-color: transparent;
+    transition: .5s;
   }
 
-  @media (min-width: 550px) {
+  button:nth-of-type(1):hover{
+    background-color: var(--yellow-hover);
+    transition: .5s;
+  }
+
+  button:nth-of-type(2):hover{
+    border: solid .125rem var(--grey-5);
+    background-color: var(--grey-5);
+    transition: .5s;
+  }
+
+  @media (min-width: 34.375rem) {
     margin: 0rem 10rem 2rem 10rem;
     padding: 1.5rem;
-    border: 4px solid var(--light-grey);
+    border: .1875rem solid var(--grey-5);
     button{
       cursor: pointer;
     }
 
     div:nth-child(1){
-      font-size: 16.8px;
+      font-size: 1.05rem;
       margin-bottom: 1rem;
       img{
         width: 2.4rem;
@@ -109,12 +127,12 @@ export const StyledForm = styled.form`
     }
 
     p:nth-child(2){
-      font-size: 26px;
+      font-size: 1.625rem;
     }
 
     div:nth-child(3), div:nth-child(4), div:nth-child(5){
       label{
-        font-size: 19px;
+        font-size: 1.1875rem;
       }
     }
 
@@ -124,13 +142,13 @@ export const StyledForm = styled.form`
       align-items: center;
       justify-content: space-between;
       label{
-        font-size: 18px;
+        font-size: 1.125rem;
       }
       p{
-        font-size: 18px;
+        font-size: 1.125rem;
 
         span{
-          font-size: 21px;
+          font-size: 1.3125rem;
         }
       }
     }
@@ -143,9 +161,7 @@ export const StyledForm = styled.form`
 
     button{
       padding: 1rem 1rem;
-      font-size: 16px;
+      font-size: 1rem;
     }
-
   }
 `
-

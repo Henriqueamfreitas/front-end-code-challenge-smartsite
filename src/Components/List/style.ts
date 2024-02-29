@@ -9,8 +9,8 @@ export const StyledList = styled.ul`
   overflow-y: scroll;
   margin-bottom: 2.5rem;
 
-  @media (min-width: 550px) {
-    height: 415px;
+  @media (min-width: 34.375rem) {
+    height: 25.9375rem;
     overflow-y: hidden;
     overflow-x: scroll;
     flex-direction: row;

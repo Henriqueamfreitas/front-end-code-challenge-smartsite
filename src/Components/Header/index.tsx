@@ -1,11 +1,11 @@
-import logo from "../../../_material/images/logo.svg"
-import { StyledHeader } from "./style.ts"
+import logo from "../../../_material/images/logo.svg";
+import { StyledHeader } from "./style.ts";
 
 export const Header = () => {
   return (
     <StyledHeader>
       <div>
-        <img src={logo} alt="" />
+        <img src={logo} alt="logo SmartFit" />
       </div>
       <div>
         <h1>REABERTURA SMART FIT</h1>

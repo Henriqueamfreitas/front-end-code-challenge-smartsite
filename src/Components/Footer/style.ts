@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-  background-color: var(--dark-grey);
-  color: var(--light-grey);
+  background-color: var(--black);
+  color: var(--grey-5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2.5rem;
   img{
-    width: 70px;
-    height: 50px;
+    width: 4.375rem;
+    height: 3.125rem;
   }
   p{
     font-size: .75rem;

@@ -1,17 +1,16 @@
-import { StyledListCard } from "./style.ts"
-import requiredTowel from "../../../_material/images/required-towel.png"
-import recommendedMask from "../../../_material/images/recommended-mask.png"
+import { StyledListCard } from "./style.ts";
+import requiredTowel from "../../../_material/images/required-towel.png";
+import recommendedMask from "../../../_material/images/recommended-mask.png";
 
-import requiredMask from "../../../_material/images/required-mask.png"
-import recommendTowel from "../../../_material/images/recommended-towel.png"
+import requiredMask from "../../../_material/images/required-mask.png";
+import recommendTowel from "../../../_material/images/recommended-towel.png";
 
-import forbiddenFountain from "../../../_material/images/forbidden-fountain.png"
-import partialFountain from "../../../_material/images/partial-fountain.png"
+import forbiddenFountain from "../../../_material/images/forbidden-fountain.png";
+import partialFountain from "../../../_material/images/partial-fountain.png";
 
-import requiredLockerroom from "../../../_material/images/required-lockerroom.png"
-import partialLockerroom from "../../../_material/images/partial-lockerroom.png"
-import forbiddenLockerroom from "../../../_material/images/forbidden-lockerroom.png"
-import { v4 as uuidv4 } from 'uuid';
+import requiredLockerroom from "../../../_material/images/required-lockerroom.png";
+import partialLockerroom from "../../../_material/images/partial-lockerroom.png";
+import forbiddenLockerroom from "../../../_material/images/forbidden-lockerroom.png";
 
 interface ISchedules {
   weekdays: string,
@@ -75,7 +74,7 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
 
 
   return (
-    <StyledListCard key={uuidv4()} isopen={object.opened ? "true" : "false"}>
+    <StyledListCard isopen={object.opened ? "true" : "false"}>
       <div>
         {object.opened ? <span>Aberto</span> : <span>Fechado</span>}
         <h3>{object.title}</h3>

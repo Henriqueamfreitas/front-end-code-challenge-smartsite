@@ -10,7 +10,7 @@ export const StyledLegendCardDiv = styled.div`
     font-weight: 300;
   }
   img{
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
   }
 `

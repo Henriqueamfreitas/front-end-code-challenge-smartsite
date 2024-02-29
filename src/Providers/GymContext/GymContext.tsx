@@ -1,7 +1,7 @@
-import { createContext, useEffect, useState } from "react"
-import { api } from "../../Services/api"
-import { IGymProviderProps, ILocations } from "./@types"
-import { IGymContext, IGymInfo } from "./@types"
+import { createContext, useEffect, useState } from "react";
+import { api } from "../../Services/api";
+import { IGymProviderProps, ILocations } from "./@types";
+import { IGymContext, IGymInfo } from "./@types";
 
 export const GymContext = createContext({} as IGymContext)
 

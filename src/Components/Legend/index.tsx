@@ -1,20 +1,18 @@
 import { StyledLegend } from "./style.ts";
 import { LegendCard } from "../LegendCard/index.tsx";
 
-// import recommendedMask from "../../../_material/images/recommended-mask.png"
-import requiredTowel from "../../../_material/images/required-towel.png"
-import recommendedMask from "../../../../front-end-code-challenge-smartsite/_material/images/recommended-mask.png"
+import requiredTowel from "../../../_material/images/required-towel.png";
+import recommendedMask from "../../../../front-end-code-challenge-smartsite/_material/images/recommended-mask.png";
 
+import recommendTowel from "../../../_material/images/recommended-towel.png";
+import requiredMask from "../../../_material/images/required-mask.png";
 
-import recommendTowel from "../../../_material/images/recommended-towel.png"
-import requiredMask from "../../../_material/images/required-mask.png"
+import forbiddenFountain from "../../../_material/images/forbidden-fountain.png";
+import partialFountain from "../../../_material/images/partial-fountain.png";
 
-import forbiddenFountain from "../../../_material/images/forbidden-fountain.png"
-import partialFountain from "../../../_material/images/partial-fountain.png"
-
-import requiredLockerroom from "../../../_material/images/required-lockerroom.png"
-import partialLockerroom from "../../../_material/images/partial-lockerroom.png"
-import forbiddenLockerroom from "../../../_material/images/forbidden-lockerroom.png"
+import requiredLockerroom from "../../../_material/images/required-lockerroom.png";
+import partialLockerroom from "../../../_material/images/partial-lockerroom.png";
+import forbiddenLockerroom from "../../../_material/images/forbidden-lockerroom.png";
 
 export const Legend = () => {
   return (

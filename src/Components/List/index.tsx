@@ -1,7 +1,9 @@
 import { GymContext } from "../../Providers/GymContext/GymContext";
-import { useContext } from "react"
+import { useContext } from "react";
 import { ListCard } from "../ListCard/index.tsx";
-import { StyledList } from "./style.ts"
+import { StyledList } from "./style.ts";
+import { v4 as uuidv4 } from 'uuid';
+
 
 export const List = () => {
   const { filteredLocations } = useContext(GymContext)
@@ -11,7 +13,7 @@ export const List = () => {
       {
         filteredLocations?.map(element => {
           return(
-            <ListCard object={element}></ListCard>
+            <ListCard key={uuidv4()} object={element}></ListCard>
           )
         })
       }

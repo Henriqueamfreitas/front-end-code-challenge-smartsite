@@ -17,6 +17,12 @@ export interface ILocations {
   schedules: ISchedules[],
   title: string,
   towel: string,
+  region: string;
+  state_name: string;
+  street: string;
+  city_name: string;
+  uf: string;
+  isopen: string;
 }
 
 export interface IGymInfo {
