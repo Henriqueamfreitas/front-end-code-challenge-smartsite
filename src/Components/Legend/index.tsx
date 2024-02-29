@@ -2,7 +2,7 @@ import { StyledLegend } from "./style.ts";
 import { LegendCard } from "../LegendCard/index.tsx";
 
 import requiredTowel from "../../../_material/images/required-towel.png";
-import recommendedMask from "../../../../front-end-code-challenge-smartsite/_material/images/recommended-mask.png";
+import recommendedMask from '../../../_material/images/recommended-mask.png';
 
 import recommendTowel from "../../../_material/images/recommended-towel.png";
 import requiredMask from "../../../_material/images/required-mask.png";
