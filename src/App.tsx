@@ -2,6 +2,7 @@ import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
 import { Form } from "./Components/Form";
 import { Legend } from "./Components/Legend";
+import { SearchGym } from "./Components/SearchGym";
 import { List } from "./Components/List";
 
 import { GlobalReset } from "./Styles/reset";
@@ -18,6 +19,7 @@ function App() {
         <Header />
         <Form />
         <Legend />
+        <SearchGym />
         <List />
         <Footer />
       </GymProvider>
