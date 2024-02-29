@@ -16,7 +16,7 @@ export const InputDiv = forwardRef<HTMLInputElement, IInputDivProps>(
   ({ id, type, value, spanText, label, register, registerName,...rest }, ref) => {
   return (
     <StyledInputDiv>
-      <input type={type} id={id} value={value} {...register(registerName)} {...rest} />
+      <input type={type} id={id} value={value} {...register(registerName)} {...rest} ref={ref}/>
       {
         registerName === "period" ?
         <label htmlFor={id}><span>{label}</span> <span>{spanText}</span></label> :
@@ -25,4 +25,3 @@ export const InputDiv = forwardRef<HTMLInputElement, IInputDivProps>(
     </StyledInputDiv>
   )
 })
-
