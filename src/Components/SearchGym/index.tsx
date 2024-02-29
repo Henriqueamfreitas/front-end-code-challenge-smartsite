@@ -41,14 +41,13 @@ export const SearchGym = () => {
         )
       });
     }
-    console.log(filtered)
     setFilteredLocations(filtered);
   };
 
 
   return (
     <StyledSearchGym onSubmit={handleSubmit(submit)}>
-      <input type="text" placeholder="Pesquise sua academia" {...register("gym_city")}/>
+      <input type="text" placeholder="Digite o nome da sua academia" {...register("gym_city")}/>
       <button><img src={lupa} alt="lupa de pesquisa" /></button>
     </StyledSearchGym>
   )
