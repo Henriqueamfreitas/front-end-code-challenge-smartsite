@@ -5,10 +5,10 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { ILocations } from "../../Providers/GymContext/@types.ts";
 import { GymContext } from "../../Providers/GymContext/GymContext.tsx";
+import { InputDiv } from "../InputDiv/index.tsx";
 
 export const Form = () => {
   const { register, handleSubmit, reset } = useForm<IForm>()
-  const [text, setText] = useState<string | null>('')
 
   const { gymInfo, filteredLocations, setFilteredLocations } = useContext(GymContext)
 
@@ -30,13 +30,11 @@ export const Form = () => {
 
   const submit = (data: IForm): void => {
     setFormData(data)
-    setText(null)
     reset({ period: "" })
   }
 
   const handleClear = () => {
     reset()
-    setText(null)
   }
 
   const filterLocations = (period: string, closedUnits: boolean) => {
@@ -109,7 +107,6 @@ export const Form = () => {
     setFilteredLocations(filtered);
   }
 
-
   return (
     <StyledForm onSubmit={handleSubmit(submit)}>
       <div>
@@ -117,23 +114,41 @@ export const Form = () => {
         <h2>Horário</h2>
       </div>
       <p>Qual período quer treinar?</p>
+      <InputDiv
+        id={"morning"}
+        type={"radio"}
+        value={"morning"}
+        label={"Manhã"}
+        spanText={"06:00 às 12:00"}
+        registerName={"period"}
+        register={register}
+      />
+      <InputDiv
+        id={"afternoon"}
+        type={"radio"}
+        value={"afternoon"}
+        label={"Tarde"}
+        spanText={"12:01 às 18:00"}
+        registerName={"period"}
+        register={register}
+      />
+      <InputDiv
+        id={"night"}
+        type={"radio"}
+        value={"night"}
+        label={"Noite"}
+        spanText={"18:01 às 23:00"}
+        registerName={"period"}
+        register={register}
+      />
       <div>
-        <input type="radio" id="morning" value={"morning"} {...register("period")} />
-        <label htmlFor="morning"><span>Manhã</span> <span>06:00 às 12:00</span></label>
-      </div>
-      <div>
-        <input type="radio" id="afternoon" value={"afternoon"} {...register("period")} />
-        <label htmlFor="afternoon"><span>Tarde</span> <span>12:01 às 18:00</span></label>
-      </div>
-      <div>
-        <input type="radio" id="night" value={"night"} {...register("period")} />
-        <label htmlFor="night"><span>Noite</span> <span>18:01 às 23:00</span></label>
-      </div>
-      <div>
-        <div>
-          <input type="checkbox" id="closedUnits" {...register("closedUnits")} />
-          <label htmlFor="closedUnits">Exibir unidades fechadas</label>
-        </div>
+        <InputDiv
+          id={"closedUnits"}
+          type={"checkbox"}
+          label={"Exibir unidades fechadas"}
+          registerName={"closedUnits"}
+          register={register}
+        />
         <p>Resultados encontrados: <span>{locations.length}</span></p>
       </div>
 
