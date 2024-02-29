@@ -3,8 +3,8 @@ import { StyledForm } from "./style.ts"
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useContext } from "react";
-import { GymContext } from "../../Providers/GymContext/GymContext.js"
 import { ILocations } from "../../Providers/GymContext/@types.ts";
+import { GymContext } from "../../Providers/GymContext/GymContext.tsx";
 
 export const Form = () => {
   const { register, handleSubmit, reset } = useForm<IForm>()

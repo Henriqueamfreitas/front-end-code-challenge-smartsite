@@ -1,5 +1,6 @@
 import { StyledFooter } from "./style.ts"
 import logo from "../../../_material/images/logo.svg"
+// import logo from "../../../_material/images/logo.svg"
 
 export const Footer = () => {
     return(

@@ -1,5 +1,5 @@
 import { StyledLegend } from "./style.ts";
-import { LegendCard } from "../LegendCard/index.js";
+import { LegendCard } from "../LegendCard/index.tsx";
 
 // import recommendedMask from "../../../_material/images/recommended-mask.png"
 import requiredTowel from "../../../_material/images/required-towel.png"

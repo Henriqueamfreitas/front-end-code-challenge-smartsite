@@ -1,5 +1,5 @@
 import { StyledLegendCard } from "./style.ts";
-import { LegendCardDiv } from "../LegendCardDiv/index.js";
+import { LegendCardDiv } from "../LegendCardDiv/index.tsx";
 
 interface ILegendCardProps {
   item: string,

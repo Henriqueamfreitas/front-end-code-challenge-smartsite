@@ -15,5 +15,6 @@ export const StyledLegend = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem 1rem;
+    flex-wrap: wrap;
   }
 `

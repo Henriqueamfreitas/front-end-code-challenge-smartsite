@@ -1,6 +1,6 @@
-import { useContext } from "react"
 import { GymContext } from "../../Providers/GymContext/GymContext";
-import { ListCard } from "../ListCard";
+import { useContext } from "react"
+import { ListCard } from "../ListCard/index.tsx";
 import { StyledList } from "./style.ts"
 
 export const List = () => {

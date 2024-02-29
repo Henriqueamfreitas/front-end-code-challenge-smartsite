@@ -11,6 +11,7 @@ import partialFountain from "../../../_material/images/partial-fountain.png"
 import requiredLockerroom from "../../../_material/images/required-lockerroom.png"
 import partialLockerroom from "../../../_material/images/partial-lockerroom.png"
 import forbiddenLockerroom from "../../../_material/images/forbidden-lockerroom.png"
+import { v4 as uuidv4 } from 'uuid';
 
 interface ISchedules {
   weekdays: string,
@@ -33,10 +34,9 @@ interface IListCardProps {
     street: string,
     city_name: string,
     uf: string,
-    isopen: boolean,
-  }
+    isopen: string,
+  },
 }
-
 
 export const ListCard: React.FC<IListCardProps> = ({ object }) => {
   const fountainImg = () => {
@@ -73,8 +73,9 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
     }
   }
 
+
   return (
-    <StyledListCard key={object.id} isopen={object.opened ? true : false}>
+    <StyledListCard key={uuidv4()} isopen={object.opened ? "true" : "false"}>
       <div>
         {object.opened ? <span>Aberto</span> : <span>Fechado</span>}
         <h3>{object.title}</h3>
