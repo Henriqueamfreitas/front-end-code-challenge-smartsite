@@ -10,8 +10,6 @@ export const StyledForm = styled.form`
   flex-direction: column;
 
   div:nth-child(1){
-    color: var(--grey-4);
-    font-size: .875rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -19,6 +17,12 @@ export const StyledForm = styled.form`
     img{
       width: 2rem;
       height: 2rem;
+    }
+    h2{
+      color: var(--grey-4);
+      font-size: .875rem;
+      line-height: normal;
+      font-weight: 300;
     }
   }
 
@@ -32,7 +36,6 @@ export const StyledForm = styled.form`
   }
 
   div:nth-child(3), div:nth-child(4), div:nth-child(5){
-    display: flex;
     align-items: center;
     gap: .5rem;
     padding: .6rem 0rem;
@@ -40,10 +43,11 @@ export const StyledForm = styled.form`
     label{
       display: flex;
       width: 100%;
-      color: var(--grey-3);
 
       justify-content: space-between;
+      color: var(--grey-3);
       font-size: 1rem;
+      line-height: normal;
       font-weight: lighter;
     }
   }
@@ -60,12 +64,14 @@ export const StyledForm = styled.form`
       justify-content: center;
       align-items: center;
       gap: .15rem;
-      font-size: 1rem;
-      font-weight: lighter;
       border: none;
+      font-size: 1rem;
+      line-height: normal;
+      font-weight: lighter;
       color: var(--grey-1);
 
       span{
+        line-height: normal;
         font-weight: bold;
         font-size: 1.125rem;
       }
@@ -85,17 +91,17 @@ export const StyledForm = styled.form`
     text-align: center;
     font-weight: bold;
     font-size: .875rem;
+    line-height: normal;
+    transition: .5s;
   }
 
   button:nth-of-type(1){
     background-color: var(--yellow);
-    transition: .5s;
   }
 
   button:nth-of-type(2){
     border: solid .125rem var(--grey-5);
     background-color: transparent;
-    transition: .5s;
   }
 
   button:nth-of-type(1):hover{
@@ -124,6 +130,9 @@ export const StyledForm = styled.form`
         width: 2.4rem;
         height: 2.4rem;
       }
+      h2{
+        font-size: 1.05rem;
+      }
     }
 
     p:nth-child(2){
@@ -141,9 +150,6 @@ export const StyledForm = styled.form`
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      label{
-        font-size: 1.125rem;
-      }
       p{
         font-size: 1.125rem;
 

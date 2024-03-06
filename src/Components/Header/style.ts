@@ -19,6 +19,7 @@ export const StyledHeader = styled.header`
       color: var(--grey-0);
       font-size: 2rem;
       font-weight: 1000;
+      line-height: normal;
     }
 
     div{

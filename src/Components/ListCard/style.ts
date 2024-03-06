@@ -22,11 +22,14 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
     span:nth-child(1) {
       color: ${props => props.isopen ? "var(--green)" : "var(--red)"};
       font-weight: 600;
+      line-height: normal;
+      font-size: .875rem;
     }
 
     h3{
       font-size: 1.5rem;
       font-weight: bold;
+      line-height: normal;
       color: var(--grey-0);
     }
 
@@ -64,7 +67,7 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
       color: var(--grey-0);
     }
     p{
-      font-size: calc(.6875rem + 2vw);
+      font-size: .875rem;
       font-weight: 400;
       line-height: normal;
       color: var(--grey-2);
@@ -79,6 +82,9 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
     div:nth-child(1){
       min-height: 8.4375rem;
       height: 8.4375rem;
+      span:nth-child(1) {
+        font-size: 1.0625rem;
+      }
       h3{
         font-size: 1.6875rem;
       }
@@ -101,7 +107,7 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
       font-size: 1.5rem;
     }
     p{
-      font-size: calc(1rem);
+      font-size: 1rem;
     }
   }
 `

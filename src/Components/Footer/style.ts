@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
   background-color: var(--black);
-  color: var(--grey-5);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +13,14 @@ export const StyledFooter = styled.footer`
   }
   p{
     font-size: .75rem;
+    color: var(--grey-5);
+    line-height: normal;
     font-weight: 100;
+  }
+
+  @media (min-width: 34.375rem) {
+    p{
+      font-size: .875rem;
+    }
   }
 `

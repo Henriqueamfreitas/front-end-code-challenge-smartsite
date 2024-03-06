@@ -7,6 +7,7 @@ export const StyledLegendCard = styled.li`
   h2{
     margin-bottom: 1rem;
     font-size: 1rem;
+    line-height: normal;
     font-weight: 600;
     color: var(--grey-0);
   }
@@ -15,5 +16,11 @@ export const StyledLegendCard = styled.li`
     justify-content: space-between;
     width: 100%;
     gap: .5rem;
+  }
+
+  @media (min-width: 34.375rem) {
+    h2{
+      font-size: 1.1875rem;
+    }
   }
 `

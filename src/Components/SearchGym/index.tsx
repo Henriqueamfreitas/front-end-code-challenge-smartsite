@@ -47,7 +47,7 @@ export const SearchGym = () => {
 
   return (
     <StyledSearchGym onSubmit={handleSubmit(submit)}>
-      <input type="text" placeholder="Digite o nome da sua academia" {...register("gym_city")}/>
+      <input type="text" placeholder="Digite o nome da academia" {...register("gym_city")}/>
       <button><img src={lupa} alt="lupa de pesquisa" /></button>
     </StyledSearchGym>
   )
