@@ -1,6 +1,4 @@
 import styled, { css } from "styled-components";
-// import { StyledFooter } from "./style.ts";
-// import logo from "../../../_material/images/logo.svg";
 
 interface HeadlineStylesProps {
   fontSize: ".75" | ".875" | "1" | "1.125" | "1.375" | "1.5" | "2" | "2.5" | "3";
