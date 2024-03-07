@@ -46,12 +46,6 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
       flex-direction: column;
       gap: .35rem;
     }
-    p{
-      /* font-size: .875rem;
-      font-weight: 400;
-      line-height: normal;
-      color: var(--grey-2); */
-    }
   }
 
   @media (min-width: 34.375rem) {
