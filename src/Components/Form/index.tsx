@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { ILocations } from "../../Providers/GymContext/@types.ts";
 import { GymContext } from "../../Providers/GymContext/GymContext.tsx";
 import { InputDiv } from "../InputDiv/index.tsx";
+import { StyledH2, StyledP, StyledSpan } from "../../Styles/typography.ts";
 
 export const Form = () => {
   const { register, handleSubmit, reset } = useForm<IForm>()
@@ -111,9 +112,9 @@ export const Form = () => {
     <StyledForm onSubmit={handleSubmit(submit)}>
       <div>
         <img src={clock} alt="desenho de relógio amarelo marcando 9h" />
-        <h2>Horário</h2>
+        <StyledH2 fontSize=".875" fontWeight="300" fontColor="grey-4">Horário</StyledH2>
       </div>
-      <p>Qual período quer treinar?</p>
+      <StyledP fontSize="1.375" fontWeight="100" fontColor="grey-5">Qual período quer treinar?</StyledP>
       <InputDiv
         id={"morning"}
         type={"radio"}
@@ -149,7 +150,10 @@ export const Form = () => {
           registerName={"closedUnits"}
           register={register}
         />
-        <p>Resultados encontrados: <span>{locations.length}</span></p>
+        <StyledP fontSize="1" fontWeight="100" fontColor="grey-1">
+          Resultados encontrados:
+          <StyledSpan fontSize="1.125" fontWeight="700" fontColor="grey-1">{locations.length}</StyledSpan>
+        </StyledP>
       </div>
 
       <div>

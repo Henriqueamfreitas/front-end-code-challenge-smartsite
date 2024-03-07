@@ -18,21 +18,6 @@ export const StyledForm = styled.form`
       width: 2rem;
       height: 2rem;
     }
-    h2{
-      color: var(--grey-4);
-      font-size: .875rem;
-      line-height: normal;
-      font-weight: 300;
-    }
-  }
-
-  p{
-    color: var(--grey-3);
-    font-size: 1.375rem;
-    font-weight: lighter;
-    padding: 0rem .75rem .75rem .75rem;
-    line-height: normal;
-    border-bottom: solid var(--grey-5) .125rem;
   }
 
   div:nth-child(3), div:nth-child(4), div:nth-child(5){
@@ -45,10 +30,10 @@ export const StyledForm = styled.form`
       width: 100%;
 
       justify-content: space-between;
-      color: var(--grey-3);
+      /* color: var(--grey-3);
       font-size: 1rem;
       line-height: normal;
-      font-weight: lighter;
+      font-weight: lighter; */
     }
   }
 
@@ -65,16 +50,6 @@ export const StyledForm = styled.form`
       align-items: center;
       gap: .15rem;
       border: none;
-      font-size: 1rem;
-      line-height: normal;
-      font-weight: lighter;
-      color: var(--grey-1);
-
-      span{
-        line-height: normal;
-        font-weight: bold;
-        font-size: 1.125rem;
-      }
     }
   }
 
