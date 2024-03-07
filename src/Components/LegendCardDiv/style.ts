@@ -5,12 +5,6 @@ export const StyledLegendCardDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  p{
-    font-size: .875rem;
-    font-weight: 300;
-    line-height: normal;
-    color: var(--grey-0);
-  }
   img{
     width: 3.125rem;
     height: 3.125rem;

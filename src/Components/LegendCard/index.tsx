@@ -1,5 +1,6 @@
 import { StyledLegendCard } from "./style.ts";
 import { LegendCardDiv } from "../LegendCardDiv/index.tsx";
+import { StyledH2 } from "../../Styles/typography.ts";
 
 interface ILegendCardProps {
   item: string,
@@ -14,7 +15,7 @@ interface ILegendCardProps {
 export const LegendCard = ({ item, img1, text1, img2, text2, img3, text3 }:ILegendCardProps) => {
   return (
     <StyledLegendCard>
-      <h2>{item}</h2>
+      <StyledH2 fontSize="1" fontWeight="600" fontColor="grey-0">{item}</StyledH2>
       <div>
         <LegendCardDiv img={img1} text={text1} />
         <LegendCardDiv img={img2} text={text2} />

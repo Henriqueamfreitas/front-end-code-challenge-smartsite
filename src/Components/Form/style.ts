@@ -30,10 +30,6 @@ export const StyledForm = styled.form`
       width: 100%;
 
       justify-content: space-between;
-      /* color: var(--grey-3);
-      font-size: 1rem;
-      line-height: normal;
-      font-weight: lighter; */
     }
   }
 
