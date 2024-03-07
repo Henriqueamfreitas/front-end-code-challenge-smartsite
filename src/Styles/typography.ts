@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 interface HeadlineStylesProps {
-  fontSize: ".75" | ".875" | "1" | "1.125" | "1.375" | "1.5" | "2" | "2.5" | "3";
-  fontWeight: "100" | "300" | "500" | "600" | "700" | "1000";
-  fontColor: "black" | "grey-0" | "grey-1" | "grey-2" | "grey-3" | "grey-4" | "grey-5" | "yellow" | "red" | "green";
+  fontSize: ".75" | ".875" | "1" | "1.125" | "1.25" | "1.375" | "1.5" | "2" | "2.5" | "3";
+  fontWeight: "100" | "300" | "400" | "500" | "600" | "700" | "1000";
+  fontColor?: "black" | "grey-0" | "grey-1" | "grey-2" | "grey-3" | "grey-4" | "grey-5" | "yellow" | "red" | "green";
 }
 
 const HeadlineStyles = ({ fontSize, fontWeight, fontColor }: HeadlineStylesProps) => {
@@ -12,6 +12,7 @@ const HeadlineStyles = ({ fontSize, fontWeight, fontColor }: HeadlineStylesProps
     ".875": ".875rem",
     "1": "1rem",
     "1.125": "1.125rem",
+    "1.25": "1.25rem",
     "1.375": "1.375rem",
     "1.5": "1.5rem",
     "2": "2rem",
@@ -22,6 +23,7 @@ const HeadlineStyles = ({ fontSize, fontWeight, fontColor }: HeadlineStylesProps
   const mapaSize: Record<string, string> = {
     "100": "100",
     "300": "300",
+    "400": "400",
     "500": "500",
     "600": "600",
     "700": "700",
@@ -45,7 +47,7 @@ const HeadlineStyles = ({ fontSize, fontWeight, fontColor }: HeadlineStylesProps
     line-height: normal;
     font-size: ${mapaTamanhos[fontSize] || "1rem"};
     font-weight: ${mapaSize[fontWeight] || "100"};
-    color: ${mapaColor[fontColor] || "inherit"};
+    color: ${ fontColor? mapaColor[fontColor]: ""};
   `;
 };
 

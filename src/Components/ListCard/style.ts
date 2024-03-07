@@ -25,20 +25,6 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
       line-height: normal;
       font-size: .875rem;
     }
-
-    h3{
-      font-size: 1.5rem;
-      font-weight: bold;
-      line-height: normal;
-      color: var(--grey-0);
-    }
-
-    p{
-      font-size: .875rem;
-      color: var(--grey-2);
-      font-weight: 300;
-      line-height: normal;
-    }
   }
 
   div:nth-of-type(2){
@@ -60,17 +46,11 @@ export const StyledListCard = styled.li<IStyledListCardProps>`
       flex-direction: column;
       gap: .35rem;
     }
-    h4{
-      font-size: 1.25rem;
-      font-weight: bold;
-      line-height: normal;
-      color: var(--grey-0);
-    }
     p{
-      font-size: .875rem;
+      /* font-size: .875rem;
       font-weight: 400;
       line-height: normal;
-      color: var(--grey-2);
+      color: var(--grey-2); */
     }
   }
 

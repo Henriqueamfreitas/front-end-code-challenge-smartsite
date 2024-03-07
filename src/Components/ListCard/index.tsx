@@ -12,6 +12,8 @@ import requiredLockerroom from "../../../_material/images/required-lockerroom.pn
 import partialLockerroom from "../../../_material/images/partial-lockerroom.png";
 import forbiddenLockerroom from "../../../_material/images/forbidden-lockerroom.png";
 
+import { StyledH3, StyledH4, StyledP } from "../../Styles/typography.ts";
+
 interface ISchedules {
   weekdays: string,
   hour: string
@@ -77,13 +79,15 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
     <StyledListCard isopen={object.opened ? "true" : "false"}>
       <div>
         {object.opened ? <span>Aberto</span> : <span>Fechado</span>}
-        <h3>{object.title}</h3>
+        <StyledH3 fontSize="1.5" fontWeight="700" fontColor="grey-0">{object.title}</StyledH3>
         {
           object.schedules ?
           (
             <div dangerouslySetInnerHTML={{ __html: object.content }} />
           ):
-          <p>{object.street}, {object.region}, {object.city_name} - {object.uf}</p>
+          <StyledP fontSize=".875" fontWeight="300" fontColor="grey-2">
+            {object.street}, {object.region}, {object.city_name} - {object.uf}
+          </StyledP>
         }
       </div>
       <div>
@@ -97,9 +101,11 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
         (
           <ul>
               <li>
-                <h4>{object.schedules[0].weekdays}</h4>
-                <p>{object.schedules[0].hour}</p>
-                <p>{object.schedules[0].weekdays === object.schedules[1].weekdays ? object.schedules[1].hour : null}</p>
+                <StyledH4 fontSize="1.25" fontWeight="700" fontColor="grey-0">{object.schedules[0].weekdays}</StyledH4>
+                <StyledP fontSize=".875" fontWeight="400" fontColor="grey-2">{object.schedules[0].hour}</StyledP>
+                <StyledP fontSize=".875" fontWeight="400" fontColor="grey-2">
+                  {object.schedules[0].weekdays === object.schedules[1].weekdays ? object.schedules[1].hour : null}
+                </StyledP>
               </li>
 
               <li>
@@ -107,15 +113,26 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
                   object.schedules[0].weekdays === object.schedules[1].weekdays ?
                     (
                       <>
-                        <h4>{object.schedules[2].weekdays}</h4>
-                        <p>{object.schedules[2].hour}</p>
-                        {object.title === "Araras" ? <p>{object.schedules[3].hour}</p> : null}
+                        <StyledH4 fontSize="1.25" fontWeight="700" fontColor="grey-0">
+                          {object.schedules[2].weekdays}
+                        </StyledH4>
+                        <StyledP fontSize=".875" fontWeight="400" fontColor="grey-2">
+                          {object.schedules[2].hour}
+                        </StyledP>
+                        {object.title === "Araras" ?
+                        <StyledP fontSize=".875" fontWeight="400" fontColor="grey-2">
+                          {object.schedules[3].hour}
+                        </StyledP> : null}
                       </>
                     ) :
                     (
                       <>
-                        <h4>{object.schedules[1].weekdays}</h4>
-                        <p>{object.schedules[1].hour}</p>
+                        <StyledH4 fontSize="1.25" fontWeight="700" fontColor="grey-0">
+                          {object.schedules[1].weekdays}
+                        </StyledH4>
+                        <StyledP fontSize=".875" fontWeight="400" fontColor="grey-2">
+                          {object.schedules[1].hour}
+                        </StyledP>
                       </>
                     )
                 }
@@ -130,14 +147,22 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
                           object.title === "Araras" ?
                             (
                               <>
-                                <h4>{object.schedules[4].weekdays}</h4>
-                                <p>{object.schedules[4].hour}</p>
+                                <StyledH4 fontSize="1.25" fontWeight="700" fontColor="grey-0">
+                                  {object.schedules[4].weekdays}
+                                </StyledH4>
+                                <StyledP fontSize=".875" fontWeight="400" fontColor="grey-2">
+                                  {object.schedules[4].hour}
+                                </StyledP>
                               </>
                             ) :
                             (
                               <>
-                                <h4>{object.schedules[3].weekdays}</h4>
-                                <p>{object.schedules[3].hour}</p>
+                                <StyledH4 fontSize="1.25" fontWeight="700" fontColor="grey-0">
+                                  {object.schedules[3].weekdays}
+                                </StyledH4>
+                                <StyledP fontSize=".875" fontWeight="400" fontColor="grey-2">
+                                  {object.schedules[3].hour}
+                                </StyledP>
                               </>
                             )
                         }
@@ -145,8 +170,12 @@ export const ListCard: React.FC<IListCardProps> = ({ object }) => {
                     ) :
                     (
                       <>
-                        <h4>{object.schedules[2].weekdays}</h4>
-                        <p>{object.schedules[2].hour}</p>
+                        <StyledH4 fontSize="1.25" fontWeight="700" fontColor="grey-0">
+                          {object.schedules[2].weekdays}
+                        </StyledH4>
+                        <StyledP fontSize=".875" fontWeight="400" fontColor="grey-2">
+                          {object.schedules[2].hour}
+                        </StyledP>
                       </>
                     )
                 }
