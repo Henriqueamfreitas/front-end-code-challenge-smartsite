@@ -28,3 +28,10 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+**Aplicação**: Essa aplicação foi baseada num desafio proposto pela rede de academias SmartFit, onde permitia que os usuários, no período da pandemia, filtrassem uma academia em específico e pudesse encontrar informações sobre a unidade que o usuário desejava.  
+
+**Tecnologias**: HTML, Styled Components, Typescript, React
+
+**Link**: https://front-end-code-challenge-smartsite-ten.vercel.app/https://front-end-code-challenge-smartsite-ten.vercel.app/
